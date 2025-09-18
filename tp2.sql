@@ -77,3 +77,16 @@ ORDER BY bill_id;
 USE test_7;
 SELECT GROUP_CONCAT(CHAR(char_message) ORDER BY id SEPARATOR '') AS decoded_message
 FROM `message`;age FROM message;
+
+-- Exercice 8 --
+USE test_6;
+SELECT 'Amsterdam' AS place, SUM(euro_cache) AS revenue FROM bills_amsterdam
+UNION ALL
+SELECT 'Antwerpen', SUM(euro_cache) FROM bills_antwerpen
+UNION ALL
+SELECT 'Groningen', SUM(euro_cache) FROM bills_groningen
+UNION ALL
+SELECT 'Haarlem', SUM(euro_cache) FROM bills_haarlem
+UNION ALL
+SELECT 'Leiden', SUM(euro_cache) FROM bills_leiden
+ORDER BY revenue DESC;
