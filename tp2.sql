@@ -63,3 +63,12 @@ SELECT
 FROM scores
 GROUP BY player
 ORDER BY MIN(id);
+
+-- Exercice 6 --
+USE test_6;
+SELECT
+    bill_id,
+    euro_cache,
+    employee
+FROM bills_amsterdam
+ORDER BY bill_id;
