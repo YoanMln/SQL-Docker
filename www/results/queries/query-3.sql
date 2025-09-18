@@ -1,0 +1,1 @@
+SELECT * FROM orders WHERE DATE(order_date) = CURDATE() ORDER BY id DESC;
