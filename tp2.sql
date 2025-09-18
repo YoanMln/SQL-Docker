@@ -28,3 +28,28 @@ FROM bought_last_month b
 JOIN product p ON b.product_name = p.name
 GROUP BY b.product_name, p.price
 ORDER BY revenue DESC;
+
+
+-- Exercice 4 --
+USE test_3;
+
+SELECT
+    c.name AS name,
+    SUM(b.amount * p.price) AS euro
+FROM customer c
+JOIN bought_last_month b ON c.id = b.customer_id
+JOIN product p ON b.product_name = p.name
+WHERE c.name = 'Dennis'
+GROUP BY c.name
+
+UNION ALL
+
+SELECT
+    b.product_name AS name,
+    b.amount * p.price AS euro
+FROM bought_last_month b
+JOIN customer c ON b.customer_id = c.id
+JOIN product p ON b.product_name = p.name
+WHERE c.name = 'Dennis'
+
+ORDER BY name != 'Dennis', name;
