@@ -53,3 +53,13 @@ JOIN product p ON b.product_name = p.name
 WHERE c.name = 'Dennis'
 
 ORDER BY name != 'Dennis', name;
+
+
+-- Exercice 5 --
+USE test_5;
+SELECT
+    player,
+    MAX(score) AS best_score
+FROM scores
+GROUP BY player
+ORDER BY MIN(id);
