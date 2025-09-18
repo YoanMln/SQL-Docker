@@ -72,3 +72,8 @@ SELECT
     employee
 FROM bills_amsterdam
 ORDER BY bill_id;
+
+-- Exercice 7 --
+USE test_7;
+SELECT GROUP_CONCAT(CHAR(char_message) ORDER BY id SEPARATOR '') AS decoded_message
+FROM `message`;age FROM message;
