@@ -4,7 +4,6 @@ SELECT * FROM users ORDER BY salary DESC LIMIT 1;
 
 
 -- Exercice 2 -- 
-
 USE test_2;
 SELECT
     d.name AS department_name,
@@ -17,3 +16,15 @@ JOIN users u ON e.user_id = u.id
 GROUP BY d.name, u_manager.name
 ORDER BY d.name;
 
+
+-- Exercice 3 --
+USE test_3;
+SELECT
+    b.product_name,
+    p.price,
+    SUM(b.amount) AS amount_sold,
+    SUM(b.amount * p.price) AS revenue
+FROM bought_last_month b
+JOIN product p ON b.product_name = p.name
+GROUP BY b.product_name, p.price
+ORDER BY revenue DESC;
