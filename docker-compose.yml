@@ -29,3 +29,5 @@ services:
       - "6603:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - /Users/apple/Desktop/DevWeb/Projets-Formation/JAVA_SQL_DOCKER_INIT-main-3/dumps:/home
